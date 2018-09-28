@@ -1,0 +1,29 @@
+Package: eggdewater
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9001
+Date: 2018-09-28
+Authors@R: 
+    person(given = "Joe",
+           family = "Thorley",
+           role = c("aut", "cre"),
+           email = "joe@poissonconsulting.ca",
+           comment = c(ORCID = "0000-0002-7683-4592"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Depends: R (>= 3.4.0)
+Imports:
+    err,
+    checkr,
+    dttr,
+    dts
+Suggests: 
+    testthat,
+    covr
+Remotes: 
+    poissonconsulting/err,
+    poissonconsulting/checkr,
+    poissonconsulting/dttr,
+    poissonconsulting/dts
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
