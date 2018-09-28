@@ -15,7 +15,8 @@ Imports:
     err,
     checkr,
     dttr,
-    dts
+    dts,
+    stats
 Suggests: 
     testthat,
     covr

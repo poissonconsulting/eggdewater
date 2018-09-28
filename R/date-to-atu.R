@@ -16,7 +16,7 @@ date_to_atu <- function(date, atu, dts, date_time = "DateTime", value = "Value")
 #' @return A Date vector.
 #' @export
 edw_date_to_atu <- function(date, atu, dts, date_time = "DateTime", value = "Value") {
-  checkor(check_vector(date, Sys.Date()))
+  check_vector(date, Sys.Date())
   check_count(atu)
   check_dts(dts, date_time = date_time, value = value, complete = TRUE, 
             sorted = TRUE, units = "days", key = date_time, nrow = TRUE,
@@ -35,5 +35,4 @@ edw_date_to_atu <- function(date, atu, dts, date_time = "DateTime", value = "Val
                  atu, dts, date_time, value)
   class(date) <- "Date"
   date
-  
 }
