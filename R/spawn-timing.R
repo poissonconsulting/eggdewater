@@ -5,7 +5,7 @@ spawn_timing <- function(date, sd, prop) {
   dist <- dnorm(as.integer(dates), as.integer(date), sd = sd)
   dist <- dist / sum(dist)
   dts <- data.frame(DateTime = dates, Value = dist, MeanSpawnDate = date)
-  dts <- dts_as_tibble(dts)
+  if(requireNamespace("tibble", quietly = TRUE)) dts <- tibble::as_tibble(dts)
   dts
 }
 

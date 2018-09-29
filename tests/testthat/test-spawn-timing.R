@@ -23,5 +23,3 @@ test_that("spawn-timing", {
   expect_equal(data$Value[1], 0.0276, tolerance = 1e-04)
   expect_equal(data$Value[nrow(data)], 0.0276, tolerance = 1e-04)
 })
-
-
