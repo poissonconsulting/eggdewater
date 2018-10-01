@@ -1,7 +1,7 @@
 Package: eggdewater
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9001
-Date: 2018-09-28
+Version: 0.0.0.9002
+Date: 2018-09-30
 Authors@R: 
     person(given = "Joe",
            family = "Thorley",
@@ -16,6 +16,7 @@ Imports:
     checkr,
     dttr,
     dts,
+    hsi,
     stats
 Suggests: 
     testthat,

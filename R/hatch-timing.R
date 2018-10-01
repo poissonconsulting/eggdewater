@@ -15,7 +15,7 @@ date_to_atu <- function(date, atu, dts, date_time = "DateTime", value = "Value")
 #'
 #' @return A Date vector.
 #' @export
-edw_date_to_atu <- function(date, atu, dts, date_time = "DateTime", value = "Value") {
+edw_hatch_timing <- function(date, atu, dts, date_time = "DateTime", value = "Value") {
   check_vector(date, Sys.Date())
   check_count(atu)
   check_dts(dts, date_time = date_time, value = value, complete = TRUE, 
