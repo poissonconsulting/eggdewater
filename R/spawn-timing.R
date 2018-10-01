@@ -4,7 +4,7 @@ spawn_timing <- function(date, sd, prop) {
   dates <- seq(date - diff, date + diff, by = "days")
   dist <- dnorm(as.integer(dates), as.integer(date), sd = sd)
   dist <- dist / sum(dist)
-  dts <- data.frame(DateTime = dates, Value = dist, MeanSpawnDate = date)
+  dts <- data.frame(Date = dates, Value = dist, MeanSpawnDate = date)
   if(requireNamespace("tibble", quietly = TRUE)) dts <- tibble::as_tibble(dts)
   dts
 }
@@ -29,8 +29,8 @@ edw_spawn_timing <- function(date, sd, prop = 0.95) {
 
   dts <- lapply(date, spawn_timing, sd, prop)
   dts <- do.call("rbind", dts)
-  if(anyDuplicated(dts$DateTime))
+  if(anyDuplicated(dts$Date))
     err("overlapping spawn timings are not permitted")
-  dts <- dts[order(dts$DateTime),]
+  dts <- dts[order(dts$Date),]
   dts
 }
