@@ -1,3 +1,11 @@
+transect_elevation <- function(model, hydrograph, discharge, elevation) {
+  out <- approx(model[[discharge]], model[[elevation]], 
+                xout = hydrograph[[discharge]])$y
+  hydrograph[[elevation]] <- out
+  hydrograph
+}
+
+
 #' Transect Elevation
 #' 
 #' @param hydrograph A data frame of the discharge values.
@@ -29,7 +37,5 @@ edw_transect_elevation <- function(hydrograph, model, discharge = "Discharge",
   check_vector(model[[elevation]], 1, x_name =
                  paste0("column '", elevation, "' of model"))
   
-  out <- approx(model[[discharge]], model[[elevation]], xout = hydrograph[[discharge]])$y
-  hydrograph[[elevation]] <- out
-  hydrograph
+  transect_elevation(model, hydrograph, discharge, elevation)
 }

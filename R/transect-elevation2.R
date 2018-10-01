@@ -30,5 +30,16 @@ edw_transect_elevation2 <- function(hydrograph, model,
   check_vector(model[[elevation]], 1, x_name =
                  paste0("column '", elevation, "' of model"))
   
-  hydrograph
+  model <- split(model, model[[discharge[2]]])
+  
+  model <- lapply(model, transect_elevation, hydrograph, 
+                        discharge = discharge[1], elevation = elevation)
+  
+  discharge2 <- as.double(names(model))
+
+  model <- do.call("rbind", model)
+  
+  model[[discharge[2]]] <- discharge2
+  
+  transect_elevation(model, hydrograph, discharge = discharge[2], elevation = elevation)
 }
