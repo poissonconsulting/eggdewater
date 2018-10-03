@@ -36,10 +36,10 @@ edw_transect_elevation2 <- function(hydrograph, model,
                         discharge = discharge[1], elevation = elevation)
   
   discharge2 <- as.double(names(model))
+  
+  model <- mapply(function(x, y, name) {x[[name]] <- y; x}, model, discharge2, MoreArgs = list(name = discharge[2]), SIMPLIFY = FALSE)
 
   model <- do.call("rbind", model)
-  
-  model[[discharge[2]]] <- discharge2
-  
+
   transect_elevation(model, hydrograph, discharge = discharge[2], elevation = elevation)
 }
