@@ -1,5 +1,4 @@
 transect_elevation <- function(model, hydrograph, discharge, elevation) {
-  model <- model[order(model[[discharge]]),]
   out <- approx(model[[discharge]], model[[elevation]], 
                 xout = hydrograph[[discharge]])$y
   hydrograph[[elevation]] <- out

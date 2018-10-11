@@ -8,7 +8,7 @@ test_that("transect_elevation2", {
                       Elevation = c(3,4,6,9))
   
   expect_equal(edw_transect_elevation2(hydrograph, model),
-               data.frame(Discharge = 15, Discharge2 = 90, Elevation = 6.7),
+               data.frame(Discharge = 15, Discharge2 = 90, Elevation = 6.5),
                check.attributes = FALSE)
 })
 
