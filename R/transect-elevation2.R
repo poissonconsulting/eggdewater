@@ -10,7 +10,7 @@ edw_transect_elevation2 <- function(hydrograph, model,
   check_vector(discharge, "", unique = TRUE, length = 2L)
   check_string(elevation)
   check_data(hydrograph, discharge)
-  check_missing_colnames(hydrograph, elevation)
+  check_missing_colnames(hydrograph, c(elevation, "..ID"))
   check_data(model, c(discharge, elevation), nrow = TRUE)
   
   if(!nrow(hydrograph)) return(double(0))
@@ -32,14 +32,34 @@ edw_transect_elevation2 <- function(hydrograph, model,
   
   model <- split(model, model[[discharge[2]]])
   
+  hydrograph$..ID <- 1:nrow(hydrograph)
+  
   model <- lapply(model, transect_elevation, hydrograph, 
                         discharge = discharge[1], elevation = elevation)
   
   discharge2 <- as.double(names(model))
   
-  model <- mapply(function(x, y, name) {x[[name]] <- y; x}, model, discharge2, MoreArgs = list(name = discharge[2]), SIMPLIFY = FALSE)
+  model <- mapply(function(x, y, name) {x[[name]] <- y; x}, model, discharge2, 
+                  MoreArgs = list(name = discharge[2]), SIMPLIFY = FALSE)
 
   model <- do.call("rbind", model)
 
-  transect_elevation(model, hydrograph, discharge = discharge[2], elevation = elevation)
+  model <- split(model, model$..ID)
+  
+  hydrograph <- split(hydrograph, hydrograph$..ID)
+  
+  model <- model[names(hydrograph)]
+
+  model <- mapply(transect_elevation, model, hydrograph, 
+                  MoreArgs = list(discharge = discharge[2], elevation = elevation), 
+                  SIMPLIFY = FALSE)
+
+  model <- do.call("rbind", model)
+  
+  model$..ID <- NULL
+  
+  if(requireNamespace("tibble", quietly = TRUE)) 
+    model <- tibble::as_tibble(model)
+  rownames(model) <- NULL
+  model
 }
