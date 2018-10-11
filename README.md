@@ -11,16 +11,50 @@ status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/egg
 [![Coverage
 status](https://codecov.io/gh/poissonconsulting/eggdewater/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/eggdewater?branch=master)
 
-The goal of eggdewater is to …
+`eggdewater` is an R package to calculate egg mortality due to
+dewatering.
 
 ## Installation
 
-You can install the released version of eggdewater from
-[CRAN](https://CRAN.R-project.org) with:
+To install the latest development version from
+[GitHub](https://github.com/poissonconsulting/eggdewater)
 
-``` r
-install.packages("eggdewater")
+    # install.packages("devtools")
+    devtools::install_github("poissonconsulting/eggdewater")
+
+To install the latest development version from the Poisson drat
+[repository](https://github.com/poissonconsulting/drat)
+
+    # install.packages("drat")
+    drat::addRepo("poissonconsulting")
+    install.packages("eggdewater")
+
+## Citation
+
+``` 
+
+To cite package 'eggdewater' in publications use:
+
+  Joe Thorley (2018). eggdewater: What the Package Does (One Line,
+  Title Case). R package version 0.0.0.9005.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {eggdewater: What the Package Does (One Line, Title Case)},
+    author = {Joe Thorley},
+    year = {2018},
+    note = {R package version 0.0.0.9005},
+  }
 ```
+
+## Contribution
+
+Please report any
+[issues](https://github.com/poissonconsulting/eggdewater/issues).
+
+[Pull requests](https://github.com/poissonconsulting/eggdewater/pulls)
+are always welcome.
 
 Please note that the ‘eggdewater’ project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
