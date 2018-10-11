@@ -2,6 +2,8 @@
 
 export(edw_hatch_timing)
 export(edw_spawn_timing)
+export(edw_survival_elevation)
+export(edw_survival_elevation2)
 export(edw_transect_elevation)
 export(edw_transect_elevation2)
 export(edw_transect_weighting)
