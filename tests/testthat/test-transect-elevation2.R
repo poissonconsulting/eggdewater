@@ -13,6 +13,7 @@ test_that("transect_elevation2", {
 })
 
 test_that("rivers_model", {
+  rivers_model <- rivers_model[sample(1:nrow(rivers_model)),]
   hydrograph <- rivers_model
   hydrograph$ModelElevation <- hydrograph$Elevation
   hydrograph$Elevation <- NULL
