@@ -11,4 +11,8 @@ test_that("atus", {
   expect_identical(edw_atus(data, atus = list(Hatch = 0L))$Hatch, data$DateTime)
   expect_identical(edw_atus(data, atus = list(Hatch2 = 3L))$Hatch2, 
                    c(as.Date(paste0("2000-01-", c("03", "03", "04"))), NA))
+  
+  data$DateTime <- dttr::dtt_date_time(data$DateTime, tz = "Etc/GMT+8")
+  hatch2 <- edw_atus(data, atus = list(Hatch2 = 3L))$Hatch2
+  expect_identical(data$DateTime[3], hatch2[1])
 })
