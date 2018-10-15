@@ -1,12 +1,12 @@
-#' Date to Accumulated Thermal Units (ATUs)
+#' Date to Hatch based on Accumulated Thermal Units (ATUs)
 #'
 #' @param x A dts object.
 #' @param dtt A string of the name of the column with the Date or POSIXct values.
 #' @param colname A string of the name of the column with the temperature data.
-#' @param atus A named list of the daily accumulated thermal units.
+#' @param atus A named list of the daily accumulated thermal units to life stage.
 #' @return The modified dts object.
 #' @export
-edw_atus <- function(x, dtt = "DateTime", colname = "Value", 
+edw_hatch <- function(x, dtt = "DateTime", colname = "Value", 
                      atus = list(Hatch = 320L, Emergence = 480L)) {
   check_string(colname)
   check_dts(x, dtt = dtt, colname = colname, unique = TRUE, sorted = TRUE,
