@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transect Elevation — edw_transect_elevation • eggdewater</title>
+<title>Survival by Elevation and Intervals — edw_survival_elevation2 • eggdewater</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Transect Elevation — edw_transect_elevation" />
+<meta property="og:title" content="Survival by Elevation and Intervals — edw_survival_elevation2" />
 
-<meta property="og:description" content="Transect Elevation" />
+<meta property="og:description" content="Survival by Elevation and Intervals" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">eggdewater</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9006</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9008</span>
       </span>
     </div>
 
@@ -92,51 +92,50 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Transect Elevation</h1>
+    <h1>Survival by Elevation and Intervals</h1>
     
-    <div class="hidden name"><code>edw_transect_elevation.Rd</code></div>
+    <div class="hidden name"><code>edw_survival_elevation2.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Transect Elevation</p>
+    <p>Survival by Elevation and Intervals</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>edw_transect_elevation</span>(<span class='no'>hydrograph</span>, <span class='no'>model</span>, <span class='kw'>discharge</span> <span class='kw'>=</span> <span class='st'>"Discharge"</span>,
-  <span class='kw'>elevation</span> <span class='kw'>=</span> <span class='st'>"Elevation"</span>)</pre>
+    <pre class="usage"><span class='fu'>edw_survival_elevation2</span>(<span class='no'>nest</span>, <span class='no'>eggs</span>, <span class='no'>alevins</span>, <span class='kw'>egg_int</span> <span class='kw'>=</span> <span class='fl'>0L</span>,
+  <span class='kw'>alevin_int</span> <span class='kw'>=</span> <span class='fl'>0L</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>hydrograph</th>
-      <td><p>A data frame of the discharge values.</p></td>
+      <th>nest</th>
+      <td><p>A number of the nest elevation.</p></td>
     </tr>
     <tr>
-      <th>model</th>
-      <td><p>A data frame of discharge and elevation values.</p></td>
+      <th>eggs</th>
+      <td><p>A double vector of the water elevations during the egg stage.</p></td>
     </tr>
     <tr>
-      <th>discharge</th>
-      <td><p>A string of the name of the column with the discharge values.</p></td>
+      <th>alevins</th>
+      <td><p>A double vector of the water elevations during the alevin stage.</p></td>
     </tr>
     <tr>
-      <th>elevation</th>
-      <td><p>A string of the name of the column with the elevation values.</p></td>
+      <th>egg_int</th>
+      <td><p>A count of the number intervals eggs can survive dewatering.</p></td>
+    </tr>
+    <tr>
+      <th>alevin_int</th>
+      <td><p>A count of the number of intervals alevins can survive dewatering.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The hydrograph data with an elevation column.</p>
+    <p>A number of the proportion surviving.</p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>edw_transect_elevation</span>(
-  <span class='fu'>data.frame</span>(<span class='kw'>Discharge</span> <span class='kw'>=</span> <span class='fl'>12</span>),
-  <span class='fu'>data.frame</span>(<span class='kw'>Discharge</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>10</span>,<span class='fl'>15</span>), <span class='kw'>Elevation</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>40</span>,<span class='fl'>50</span>)))</div><div class='output co'>#&gt;   Discharge Elevation
-#&gt; 1        12        44</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -144,9 +143,7 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

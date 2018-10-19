@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Date to Accumulated Thermal Units (ATUs) — edw_hatch_timing • eggdewater</title>
+<title>Spawning — edw_spawning • eggdewater</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,10 @@
 
 
 
-<meta property="og:title" content="Date to Accumulated Thermal Units (ATUs) — edw_hatch_timing" />
+<meta property="og:title" content="Spawning — edw_spawning" />
 
-<meta property="og:description" content="Date to Accumulated Thermal Units (ATUs)" />
+<meta property="og:description" content="The spawning densities are calculated using dnorm.
+Its important to realize that the densities will need rescaling." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +62,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">eggdewater</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9006</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.0.0.9008</span>
       </span>
     </div>
 
@@ -92,48 +93,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Date to Accumulated Thermal Units (ATUs)</h1>
+    <h1>Spawning</h1>
     
-    <div class="hidden name"><code>edw_hatch_timing.Rd</code></div>
+    <div class="hidden name"><code>edw_spawning.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Date to Accumulated Thermal Units (ATUs)</p>
+    <p>The spawning densities are calculated using dnorm.
+Its important to realize that the densities will need rescaling.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>edw_hatch_timing</span>(<span class='no'>date</span>, <span class='no'>atu</span>, <span class='no'>dts</span>, <span class='kw'>date_time</span> <span class='kw'>=</span> <span class='st'>"DateTime"</span>,
-  <span class='kw'>value</span> <span class='kw'>=</span> <span class='st'>"Value"</span>)</pre>
+    <pre class="usage"><span class='fu'>edw_spawning</span>(<span class='no'>x</span>, <span class='kw'>dtt</span> <span class='kw'>=</span> <span class='st'>"DateTime"</span>, <span class='kw'>colname</span> <span class='kw'>=</span> <span class='st'>"Spawning"</span>,
+  <span class='kw'>peak</span> <span class='kw'>=</span> <span class='fu'>as.Date</span>(<span class='st'>"1972-06-01"</span>), <span class='kw'>sd</span> <span class='kw'>=</span> <span class='fl'>7L</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>date</th>
-      <td><p>A Date vector.</p></td>
+      <th>x</th>
+      <td><p>A dts data frame.</p></td>
     </tr>
     <tr>
-      <th>atu</th>
-      <td><p>A count of the ATUs</p></td>
+      <th>dtt</th>
+      <td><p>A string of the name of the column with the DateTime values.</p></td>
     </tr>
     <tr>
-      <th>dts</th>
-      <td><p>A dts object.</p></td>
+      <th>colname</th>
+      <td><p>A string of the name of the column to save the spawning densities to.</p></td>
     </tr>
     <tr>
-      <th>date_time</th>
-      <td><p>A string of the Date column name in dts.</p></td>
+      <th>peak</th>
+      <td><p>A Date vector of the mean spawn dates.</p></td>
     </tr>
     <tr>
-      <th>value</th>
-      <td><p>A string of the temperature column name in dts.</p></td>
+      <th>sd</th>
+      <td><p>A positive integer scalar or vector of the standard deviation in days in the distribution of spawning.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A Date vector.</p>
+    <p>The dts data frame with a column of the spawning densities.</p>
     
 
   </div>
