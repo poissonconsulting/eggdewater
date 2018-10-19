@@ -36,7 +36,7 @@ To install the latest development version from the Poisson drat
 To cite package 'eggdewater' in publications use:
 
   Joe Thorley (2018). eggdewater: What the Package Does (One Line,
-  Title Case). R package version 0.0.0.9005.
+  Title Case). R package version 0.0.0.9009.
 
 A BibTeX entry for LaTeX users is
 
@@ -44,7 +44,7 @@ A BibTeX entry for LaTeX users is
     title = {eggdewater: What the Package Does (One Line, Title Case)},
     author = {Joe Thorley},
     year = {2018},
-    note = {R package version 0.0.0.9005},
+    note = {R package version 0.0.0.9009},
   }
 ```
 
@@ -58,4 +58,4 @@ are always welcome.
 
 Please note that the ‘eggdewater’ project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its terms.
+this project, you agree to abide by its terms
