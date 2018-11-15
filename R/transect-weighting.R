@@ -39,7 +39,8 @@ edw_transect_weighting <- function(rkm, data, riverkm = "RiverKm", spawning = "S
   check_vector(data[[riverkm]], 1, unique = TRUE, x_name =
                  paste0("column '", riverkm, "' of data"))
   
-  check_props(data[[spawning]], x_name = paste0("column '", spawning, "' of data"))
+  check_vector(data[[spawning]], c(0,1), length = TRUE,
+               x_name = paste0("column '", spawning, "' of data"))
 
   data <- mapply(transect_weighting, data[[riverkm]], data[[spawning]], 
                  MoreArgs = list(rkm = sort(rkm)), SIMPLIFY = FALSE)

@@ -23,23 +23,11 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-To install the latest development version from [GitHub](https://github.com/poissonconsulting/eggdewater)
-```
-# install.packages("devtools")
-devtools::install_github("poissonconsulting/eggdewater")
-```
-
 To install the latest development version from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
 ```
 # install.packages("drat")
 drat::addRepo("poissonconsulting")
 install.packages("eggdewater")
-```
-
-## Citation
-
-```{r, comment="", echo=FALSE}
-citation(package = "eggdewater")
 ```
 
 ## Contribution

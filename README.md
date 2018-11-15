@@ -16,37 +16,12 @@ dewatering.
 
 ## Installation
 
-To install the latest development version from
-[GitHub](https://github.com/poissonconsulting/eggdewater)
-
-    # install.packages("devtools")
-    devtools::install_github("poissonconsulting/eggdewater")
-
 To install the latest development version from the Poisson drat
 [repository](https://github.com/poissonconsulting/drat)
 
     # install.packages("drat")
     drat::addRepo("poissonconsulting")
     install.packages("eggdewater")
-
-## Citation
-
-``` 
-
-To cite package 'eggdewater' in publications use:
-
-  Joe Thorley (2018). eggdewater: What the Package Does (One Line,
-  Title Case). R package version 0.0.0.9009.
-
-A BibTeX entry for LaTeX users is
-
-  @Manual{,
-    title = {eggdewater: What the Package Does (One Line, Title Case)},
-    author = {Joe Thorley},
-    year = {2018},
-    note = {R package version 0.0.0.9009},
-  }
-```
 
 ## Contribution
 
