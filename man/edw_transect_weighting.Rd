@@ -4,8 +4,7 @@
 \alias{edw_transect_weighting}
 \title{Transect Weighting}
 \usage{
-edw_transect_weighting(rkm, data, riverkm = "RiverKm",
-  spawning = "Spawning")
+edw_transect_weighting(rkm, data, riverkm = "RiverKm", spawning = "Spawning")
 }
 \arguments{
 \item{rkm}{A double vector of the transect river kms}

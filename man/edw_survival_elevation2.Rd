@@ -4,8 +4,7 @@
 \alias{edw_survival_elevation2}
 \title{Survival by Elevation and Intervals}
 \usage{
-edw_survival_elevation2(nest, eggs, alevins, egg_int = 0L,
-  alevin_int = 0L)
+edw_survival_elevation2(nest, eggs, alevins, egg_int = 0L, alevin_int = 0L)
 }
 \arguments{
 \item{nest}{A number of the nest elevation.}
