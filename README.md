@@ -3,25 +3,22 @@
 
 # eggdewater
 
+<!-- badges: start -->
+
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Travis build
-status](https://travis-ci.org/poissonconsulting/eggdewater.svg?branch=master)](https://travis-ci.org/poissonconsulting/eggdewater)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/eggdewater?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/eggdewater)
-[![Coverage
-status](https://codecov.io/gh/poissonconsulting/eggdewater/branch/master/graph/badge.svg)](https://codecov.io/github/poissonconsulting/eggdewater?branch=master)
+[![R build
+status](https://github.com/poissonconsulting/eggdewater/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/eggdewater/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/poissonconsulting/eggdewater/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/eggdewater?branch=master)
+<!-- badges: end -->
 
 `eggdewater` is an R package to calculate egg mortality due to
 dewatering.
 
 ## Installation
 
-To install the latest development version from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-    # install.packages("drat")
-    drat::addRepo("poissonconsulting")
-    install.packages("eggdewater")
+    # install.packages("devtools")
+    devtools::install_github("poissonconsulting/eggdewater")
 
 ## Contribution
 
@@ -31,6 +28,9 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/eggdewater/pulls)
 are always welcome.
 
-Please note that the ‘eggdewater’ project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its terms.
+## Code of Conduct
+
+Please note that the eggdewater project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
