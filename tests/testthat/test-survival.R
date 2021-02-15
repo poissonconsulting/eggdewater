@@ -1,5 +1,3 @@
-context("context")
-
 test_that("survival_elevation", {
   expect_identical(edw_survival_elevation(0, -1), 0)
   expect_identical(edw_survival_elevation(0, 0), 0)

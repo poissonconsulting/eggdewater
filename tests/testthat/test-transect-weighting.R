@@ -1,5 +1,3 @@
-context("transect-weighting")
-
 test_that("transect_weighting", {
   expect_equal(transect_weighting(-9, 0.5, c(-11,-8)), c(0.1666667, 0.3333333),
                tolerance = 1e-07)
