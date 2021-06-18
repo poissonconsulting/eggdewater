@@ -7,9 +7,9 @@
 #' @return A number of the proportion surviving.
 #' @export
 edw_survival_elevation <- function(nest, eggs, egg_int = 0L) {
-  check_scalar(nest, 1)
-  check_vector(eggs, 1, length = TRUE)
-  check_count(egg_int)
+  chk_scalar(nest)
+  chk_vector(eggs)
+  chk_whole_number(egg_int)
 
   eggs <- eggs <= nest
   eggs <- rle(eggs)
@@ -31,11 +31,11 @@ edw_survival_elevation <- function(nest, eggs, egg_int = 0L) {
 #' @export
 edw_survival_elevation2 <- function(nest, eggs, alevins,
                               egg_int = 0L, alevin_int = 0L) {
-  check_scalar(nest, 1)
-  check_vector(eggs, 1)
-  check_vector(alevins, 1)
-  check_count(egg_int)
-  check_count(alevin_int)
+  chk_scalar(nest)
+  chk_vector(eggs)
+  chk_vector(alevins)
+  chk_whole_number(egg_int)
+  chk_whole_number(alevin_int)
   
   eggs <- edw_survival_elevation(nest, eggs, egg_int)
   alevins <- edw_survival_elevation(nest, alevins, alevin_int)

@@ -32,15 +32,18 @@ transect_weighting <- function(riverkm, spawning, rkm) {
 #'   Spawning = c(0.1,0.8,0.1)
 #' ))
 edw_transect_weighting <- function(rkm, data, riverkm = "RiverKm", spawning = "Spawning") {
-  check_vector(rkm, 1, unique = TRUE)
+  chk_vector(rkm)
+  chk_unique(rkm)
   
-  check_data(data, c(riverkm, spawning), nrow = TRUE)
+  check_data(data, nrow = TRUE)
+  check_names(data, names = c(riverkm, spawning))
   
-  check_vector(data[[riverkm]], 1, unique = TRUE, x_name =
-                 paste0("column '", riverkm, "' of data"))
+  chk_unique(data[[riverkm]])
+  chk_vector(data[[riverkm]], x_name =
+               paste0("column '", riverkm, "' of data"))
   
-  check_vector(data[[spawning]], c(0,1), length = TRUE,
-               x_name = paste0("column '", spawning, "' of data"))
+  chk_vector(data[[spawning]], x_name = paste0("column '", spawning, "' of data"))
+  chk_range(data[[spawning]], c(0,1))
 
   data <- mapply(transect_weighting, data[[riverkm]], data[[spawning]], 
                  MoreArgs = list(rkm = sort(rkm)), SIMPLIFY = FALSE)
