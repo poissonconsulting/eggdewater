@@ -20,3 +20,4 @@ test_that("survival_elevation2", {
   expect_identical(edw_survival_elevation2(0, c(0,1,0), c(0,0,1), 1L, 2L), 1)
   expect_identical(edw_survival_elevation2(0, c(0,0,1), c(0,0,1), 1L, 2L), 0)
 })
+
