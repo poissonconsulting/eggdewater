@@ -1,2 +1,2 @@
-#' @import err checkr dttr dts hsi stats
+#' @import dts hsi stats chk
 NULL
